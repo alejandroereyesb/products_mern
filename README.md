@@ -2,72 +2,20 @@
 
 ![App](./assets/mern_docker_schema.png)
 
-Application made with ReactJS + ExpressJS + MongoDB
+Application made with ReactJS + ExpressJS + MongoDB + Docker + Docker Compose
 
-You must have Docker and docker-compose Installed in your System !
-
-### How to run the App :
-
-#### Development
-
-Run the app using:
-
-`$ docker-compose -f docker-compose-dev.yml up `
-
-or
-
-`$ docker-compose up -d`
-
-Above command will start the services on (-d) detach mode (similar like running the app in background)
-
-Then you can check the status of the containers by running:
-
-`$ docker ps`
-
-visit server or client : http://localhost:8080
-
-To check the status of the running containers :
-
-`docker-compose ps`
-
-
-#### Production
-
-To deploy in AWS EC2
-
-Run the app using:
-
-`$ docker-compose up -d --build --remove-orphans`
-
-or
-
-`$ docker-compose up -d`
-
-Above command will start the services on (-d) detach mode (similar like running the app in background)
-
-Then you can check the status of the containers by running:
-
-`$ docker ps`
-
-visit server or client : `your_aws_ip:80`
-
-To check the status of the running containers :
-
-`docker-compose ps`
-
-
-# Execute MERN app
-We can also execute our project without Docker
+# Execute MERN app lcally
+Steps to execute our project locally
 
 ## Launch client + server
 ```javascript
 cd client
 //client
-npm ci
+npm i
 
 cd ..
 // server
-npm ci 
+npm i 
 
 //Preload data MongoDB - seeder
 npm run feed_db
@@ -176,6 +124,57 @@ mongodb+srv://<username>:<password>@cluster0.t7z6t.mongodb.net/BD?retryWrites=tr
 ```
 
 Now you are ready to use your app editing `.env` file with your MongoDB URL
+
+You must have Docker and docker-compose Installed in your System !
+
+### How to run the App with Docker + Docker compose
+
+Run the app using:
+
+`$ docker-compose -f docker-compose-dev.yml up `
+
+or
+
+`$ docker-compose up -d`
+
+Above command will start the services on (-d) detach mode (similar like running the app in background)
+
+Then you can check the status of the containers by running:
+
+`$ docker ps`
+
+visit server or client : http://localhost:8080
+
+To check the status of the running containers :
+
+`docker-compose ps`
+
+
+#### Production
+
+To deploy in AWS EC2
+
+Run the app using:
+
+`$ docker-compose up -d --build --remove-orphans`
+
+or
+
+`$ docker-compose up -d`
+
+Above command will start the services on (-d) detach mode (similar like running the app in background)
+
+Then you can check the status of the containers by running:
+
+`$ docker ps`
+
+visit server or client : `your_aws_ip:80`
+
+To check the status of the running containers :
+
+`docker-compose ps`
+
+
 
 
 ![App](./assets/deploy_meme.jpeg)
